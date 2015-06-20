@@ -1,0 +1,14 @@
+#find the largest sum of a slice of an array
+def max_slice(A):
+    test=max_sum=max_slice=0
+    if max(A)<=0:    
+        test=max_slice=max(A)
+    for a in A:     
+        max_sum=max(test,max_sum+a)
+        max_slice = max(max_sum,max_slice)
+    return max_slice
+    
+A =[5,-7,3,5,-2,4,-1]
+print "Largest sum of a slide: {}.".format(max_slice(A))
+
+-------------------------------------------------------------------------------------------------------------------------
