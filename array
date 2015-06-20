@@ -12,3 +12,22 @@ A =[5,-7,3,5,-2,4,-1]
 print "Largest sum of a slide: {}.".format(max_slice(A))
 
 -------------------------------------------------------------------------------------------------------------------------
+
+#it gives the minimal absolute difference between the sum of the
+#first part and the sum of the second part
+#(this is not the perfect solution, but I made all alone)
+def TapeEquilibrium(A):
+    p=1
+    ans = sum(A)
+    if max(A)<0:
+        ans=-sum(A)
+    for item in list(A[1:len(A)]):
+        if abs(sum(A[0:p])-sum(A[p:len(A)]))<ans:
+            ans=abs(sum(A[0:p])-sum(A[p:len(A)]))
+        p+=1
+    return  ans
+
+A = [-3, -1, -2, -4, -3]
+print "minimal absolute difference: {}".format(TapeEquilibrium(A))
+
+-------------------------------------------------------------------------------------------------------------------------
