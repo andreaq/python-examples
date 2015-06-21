@@ -13,6 +13,7 @@ print "Largest sum of a slide: {}.".format(max_slice(A))
 
 -------------------------------------------------------------------------------------------------------------------------
 
+#Minimize the value |(A[0] + ... + A[P-1]) - (A[P] + ... + A[N-1])|.
 #it gives the minimal absolute difference between the sum of the
 #first part and the sum of the second part
 #(this is not the perfect solution, but I made all alone)
@@ -31,3 +32,12 @@ A = [-3, -1, -2, -4, -3]
 print "minimal absolute difference: {}".format(TapeEquilibrium(A))
 
 -------------------------------------------------------------------------------------------------------------------------
+
+#Count minimal number of jumps from position X to Y.
+
+def  FrogJmp(X, Y, D):
+    import math
+    return int(math.ceil((Y-X)/float(D)))
+    
+X,Y,D=10,85,30
+print  "minimal number of jumps from position {} to {}, with jumps of {} : {}".format(X,Y,D,FrogJmp(X,Y,D))
