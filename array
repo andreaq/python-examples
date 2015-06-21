@@ -41,3 +41,21 @@ def  FrogJmp(X, Y, D):
     
 X,Y,D=10,85,30
 print  "minimal number of jumps from position {} to {}, with jumps of {} : {}".format(X,Y,D,FrogJmp(X,Y,D))
+
+-------------------------------------------------------------------------------------------------------------------------
+
+#Find the missing element in a given permutation.
+def PermMissingElem_slow(A):
+    # write your code in Python 2.7
+    for i in range(len(A)+1):
+        if not(i+1 in A):
+            break
+    return i+1
+
+def PermMissingElem(A):
+    return sum(range(len(A)+2))-sum(A)
+
+A=[1,2,4,5]
+print "The missing element is: {}".format(PermMissingElem(A))
+
+-------------------------------------------------------------------------------------------------------------------------
