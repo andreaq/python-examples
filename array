@@ -59,3 +59,16 @@ A=[1,2,4,5]
 print "The missing element is: {}".format(PermMissingElem(A))
 
 -------------------------------------------------------------------------------------------------------------------------
+#This code gives the exact solution in all cases, but it is not the faste
+#but I wrote all alone
+#Minimize the value |(A[0] + ... + A[P-1]) - (A[P] + ... + A[N-1])|.
+def TapeEquilibrium(A):
+    ans=abs(A[0]- sum(A[1:len(A)]))
+    for i in range(len(A)-1):
+        ans = min(abs(sum(A[0:i+1])-sum(A[i+1:len(A)])),ans)
+    return ans
+
+A=[-3,1,2,4,3]           
+print TapeEquilibrium(A) 
+
+-------------------------------------------------------------------------------------------------------------------------
